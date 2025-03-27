@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "Ben Jepson"
+  navbar:
+    right:
+      - text: "Blog"
+        href: "/blog"
+      - text: "Projects"
+        href: "/projects"
+      - text: "LinkedIn"
+        href: "https://linkedin.com/in/benjepson"
+      - text: "YouTube"
+        href: "https://youtube.com/jepsonstats"
+      - text: "About"
+        href: "about.qmd"
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

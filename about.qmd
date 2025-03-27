@@ -1,0 +1,11 @@
+---
+title: "About"
+---
+
+Hi I'm Ben - I love to analyze data and share the results with others in a way they can understand. I also like to teach, and learn from others too. I like to focus on analysis for people, keeping it interpretable and helping inform decisions.
+
+I have worked in the food industry doing product development/R&D and process improvements (along with many other things). While working I learned about statistical process control (SPC) and design of experiments(DOE) and loved it - these were methods I could use every day to work more efficiently and effectively. I wanted to learn everything I could so I went back to school while working full time and earned an MS in Applied Statistics.
+
+My goal for this portfolio is to show you who I am and my thought process. Being a career changer, I bring a unique perspective. I've been working with data in product development (experimental design, measurement systems analysis), consumer research (segmenting, text analysis), manufacturing (statistical process control, process modeling). I'm currently working as a self employed consultant, helping design research studies, analyze the results, and helping clients use data to make effective decisions. Before that my most recent job was Associate Director Statistician for a large food manufacturer where I was responsible for the application of statistical methods to food safety.
+
+I'm currently looking for a full time job, I'd love to help you analyze your data and help you make sound decisions. 

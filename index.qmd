@@ -1,0 +1,11 @@
+---
+title: "portfolio landing page"
+format: html
+---
+
+# Welcome to My Portfolio
+
+Hi I'm Ben! I'm a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and I've started posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
+
+- Featured Project: [ChickWeight Analysis-setup test](https://benjepson.github.io/chickweight)
+- Blog: [My thoughts and more projects](https://benjepson.github.io/blog)
