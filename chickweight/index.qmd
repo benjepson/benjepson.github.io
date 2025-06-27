@@ -1,0 +1,48 @@
+---
+title: "Chickweight dataset site testing"
+format: html
+---
+
+```{r}
+library(tidyverse)
+data(ChickWeight)
+```
+
+
+## Introduction
+
+Using an easy dataset to get used to updating quarto website on github pages
+
+## Data exploration
+
+```{r}
+summary(ChickWeight)
+```
+
+There we go
+
+```{r}
+summary(ChickWeight) %>% 
+    DT::datatable()
+```
+
+I know it doesn't look great just testing the site for changes
+
+```{r}
+ggplot(data = ChickWeight, 
+       aes(x = Time, y = weight, color = Diet)) +
+    
+  geom_point(alpha = 0.5) +
+    
+  geom_smooth(method = "loess", se = FALSE) +
+  labs(title = "Chick Growth Over Time by Diet",
+       x = "Time (days)",
+       y = "Weight (grams)")
+
+```
+
+Will change the theme later
+
+## Conclusion and next steps
+
+Ok that was fun! We're going to render, and push to GitHub. See you soon

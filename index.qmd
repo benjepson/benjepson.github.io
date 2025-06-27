@@ -1,5 +1,5 @@
 ---
-title: "portfolio landing page"
+title: "Portfolio Landing Page"
 format: html
 ---
 

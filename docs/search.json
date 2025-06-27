@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "portfolio landing page",
+    "title": "Portfolio Landing Page",
     "section": "",
     "text": "Welcome to My Portfolio\nHi I’m Ben! I’m a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and I’ve started posting on YouTube as well. Let me know if you’d like to collaborate or hear more about a topic!\n\nFeatured Project: ChickWeight Analysis-setup test\nBlog: My thoughts and more projects"
   },
@@ -12,5 +12,33 @@
     "title": "About",
     "section": "",
     "text": "Hi I’m Ben - I love to analyze data and share the results with others in a way they can understand. I also like to teach, and learn from others too. I like to focus on analysis for people, keeping it interpretable and helping inform decisions.\nI have worked in the food industry doing product development/R&D and process improvements (along with many other things). While working I learned about statistical process control (SPC) and design of experiments(DOE) and loved it - these were methods I could use every day to work more efficiently and effectively. I wanted to learn everything I could so I went back to school while working full time and earned an MS in Applied Statistics.\nMy goal for this portfolio is to show you who I am and my thought process. Being a career changer, I bring a unique perspective. I’ve been working with data in product development (experimental design, measurement systems analysis), consumer research (segmenting, text analysis), manufacturing (statistical process control, process modeling). I’m currently working as a self employed consultant, helping design research studies, analyze the results, and helping clients use data to make effective decisions. Before that my most recent job was Associate Director Statistician for a large food manufacturer where I was responsible for the application of statistical methods to food safety.\nI’m currently looking for a full time job, I’d love to help you analyze your data and help you make sound decisions."
+  },
+  {
+    "objectID": "chickweight/index.html",
+    "href": "chickweight/index.html",
+    "title": "Chickweight dataset site testing",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndata(ChickWeight)"
+  },
+  {
+    "objectID": "chickweight/index.html#introduction",
+    "href": "chickweight/index.html#introduction",
+    "title": "Chickweight dataset site testing",
+    "section": "Introduction",
+    "text": "Introduction\nUsing an easy dataset to get used to updating quarto website on github pages"
+  },
+  {
+    "objectID": "chickweight/index.html#data-exploration",
+    "href": "chickweight/index.html#data-exploration",
+    "title": "Chickweight dataset site testing",
+    "section": "Data exploration",
+    "text": "Data exploration\n\nsummary(ChickWeight)\n\n     weight           Time           Chick     Diet   \n Min.   : 35.0   Min.   : 0.00   13     : 12   1:220  \n 1st Qu.: 63.0   1st Qu.: 4.00   9      : 12   2:120  \n Median :103.0   Median :10.00   20     : 12   3:120  \n Mean   :121.8   Mean   :10.72   10     : 12   4:118  \n 3rd Qu.:163.8   3rd Qu.:16.00   17     : 12          \n Max.   :373.0   Max.   :21.00   19     : 12          \n                                 (Other):506          \n\n\nThere we go\n\nsummary(ChickWeight) %&gt;% \n    DT::datatable()\n\n\n\n\n\nI know it doesn’t look great just testing the site for changes\n\nggplot(data = ChickWeight, \n       aes(x = Time, y = weight, color = Diet)) +\n    \n  geom_point(alpha = 0.5) +\n    \n  geom_smooth(method = \"loess\", se = FALSE) +\n  labs(title = \"Chick Growth Over Time by Diet\",\n       x = \"Time (days)\",\n       y = \"Weight (grams)\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nWill change the theme later"
+  },
+  {
+    "objectID": "chickweight/index.html#conclusion-and-next-steps",
+    "href": "chickweight/index.html#conclusion-and-next-steps",
+    "title": "Chickweight dataset site testing",
+    "section": "Conclusion and next steps",
+    "text": "Conclusion and next steps\nOk that was fun! We’re going to render, and push to GitHub. See you soon"
   }
 ]
