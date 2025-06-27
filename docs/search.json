@@ -18,27 +18,27 @@
     "href": "chickweight/index.html",
     "title": "Chickweight dataset site testing",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndata(ChickWeight)"
+    "text": "Using an easy dataset to get used to updating quarto website on github pages Just added some options and changed the YAML"
   },
   {
     "objectID": "chickweight/index.html#introduction",
     "href": "chickweight/index.html#introduction",
     "title": "Chickweight dataset site testing",
-    "section": "Introduction",
-    "text": "Introduction\nUsing an easy dataset to get used to updating quarto website on github pages"
+    "section": "",
+    "text": "Using an easy dataset to get used to updating quarto website on github pages Just added some options and changed the YAML"
   },
   {
     "objectID": "chickweight/index.html#data-exploration",
     "href": "chickweight/index.html#data-exploration",
     "title": "Chickweight dataset site testing",
     "section": "Data exploration",
-    "text": "Data exploration\n\nsummary(ChickWeight)\n\n     weight           Time           Chick     Diet   \n Min.   : 35.0   Min.   : 0.00   13     : 12   1:220  \n 1st Qu.: 63.0   1st Qu.: 4.00   9      : 12   2:120  \n Median :103.0   Median :10.00   20     : 12   3:120  \n Mean   :121.8   Mean   :10.72   10     : 12   4:118  \n 3rd Qu.:163.8   3rd Qu.:16.00   17     : 12          \n Max.   :373.0   Max.   :21.00   19     : 12          \n                                 (Other):506          \n\n\nThere we go\n\nsummary(ChickWeight) %&gt;% \n    DT::datatable()\n\n\n\n\n\nI know it doesn’t look great just testing the site for changes\n\nggplot(data = ChickWeight, \n       aes(x = Time, y = weight, color = Diet)) +\n    \n  geom_point(alpha = 0.5) +\n    \n  geom_smooth(method = \"loess\", se = FALSE) +\n  labs(title = \"Chick Growth Over Time by Diet\",\n       x = \"Time (days)\",\n       y = \"Weight (grams)\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nWill change the theme later"
+    "text": "Data exploration\n\n\n     weight           Time           Chick     Diet   \n Min.   : 35.0   Min.   : 0.00   13     : 12   1:220  \n 1st Qu.: 63.0   1st Qu.: 4.00   9      : 12   2:120  \n Median :103.0   Median :10.00   20     : 12   3:120  \n Mean   :121.8   Mean   :10.72   10     : 12   4:118  \n 3rd Qu.:163.8   3rd Qu.:16.00   17     : 12          \n Max.   :373.0   Max.   :21.00   19     : 12          \n                                 (Other):506          \n\n\nOk I changed the text right here\nAND I removed the DT::datatable…I didn’t really think it belonged here\n\n\n\n\n\n\n\n\n\nChanged theme. I’d rather facet by chick maybe? Future edit this is a test."
   },
   {
     "objectID": "chickweight/index.html#conclusion-and-next-steps",
     "href": "chickweight/index.html#conclusion-and-next-steps",
     "title": "Chickweight dataset site testing",
     "section": "Conclusion and next steps",
-    "text": "Conclusion and next steps\nOk that was fun! We’re going to render, and push to GitHub. See you soon"
+    "text": "Conclusion and next steps\nRound 2, see you (soon)"
   }
 ]

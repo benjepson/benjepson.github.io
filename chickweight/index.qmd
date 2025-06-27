@@ -1,17 +1,36 @@
 ---
 title: "Chickweight dataset site testing"
-format: html
+author: "Ben Jepson"
+format: 
+    html:
+        toc: true
+        code-fold: true
+        code-summary: "Show code"
+engine: knitr
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+    warning = FALSE,
+    message = FALSE,
+    echo = FALSE,
+    fig.width = 10, 
+    fig.height = 7
+)
+```
+
 
 ```{r}
 library(tidyverse)
 data(ChickWeight)
+theme_set(theme_bw())
 ```
 
 
 ## Introduction
 
 Using an easy dataset to get used to updating quarto website on github pages
+Just added some options and changed the YAML
 
 ## Data exploration
 
@@ -19,14 +38,9 @@ Using an easy dataset to get used to updating quarto website on github pages
 summary(ChickWeight)
 ```
 
-There we go
+Ok I changed the text right here
 
-```{r}
-summary(ChickWeight) %>% 
-    DT::datatable()
-```
-
-I know it doesn't look great just testing the site for changes
+AND I removed the DT::datatable...I didn't really think it belonged here
 
 ```{r}
 ggplot(data = ChickWeight, 
@@ -41,8 +55,8 @@ ggplot(data = ChickWeight,
 
 ```
 
-Will change the theme later
+Changed theme. I'd rather facet by chick maybe? Future edit this is a test.
 
 ## Conclusion and next steps
 
-Ok that was fun! We're going to render, and push to GitHub. See you soon
+Round 2, see you (soon)
