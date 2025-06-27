@@ -8,4 +8,6 @@ format: html
 Hi I'm Ben! I'm a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and I've started posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
 
 - Featured Project: [ChickWeight Analysis-setup test](https://benjepson.github.io/chickweight)
+Won't be "featured" for long, this was just me going through the motions of setting the portfolio. 
+
 - Blog: [My thoughts and more projects](https://benjepson.github.io/blog)
