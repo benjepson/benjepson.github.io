@@ -1,13 +1,18 @@
 ---
-title: "Portfolio Landing Page"
+title: ""
 format: html
 ---
 
 # Welcome to My Portfolio
 
-Hi I'm Ben! I'm a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and I've started posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
+Hi I'm Ben! I'm a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and soon I'll be posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
 
-- Featured Project: [ChickWeight Analysis-setup test](https://benjepson.github.io/chickweight)
-Won't be "featured" for long, this was just me going through the motions of setting the portfolio. 
+Update 7/1/25 I have just started this portfolio recently, I will be adding more each day this week.
+
+- Featured Project: [Real Time SPC](https://benjepson.github.io/realtime-SPC)
+This one is really exciting. I'm using the power of Statistical Process Control (SPC) to track my fitness progress. Unlike a textbook example where you are given a dataset, this dataset is being generated in real time, day by day, week by week, and I don't know how it's going to go. We will find out together. Keep checking back for updates!
+
+- Test project: [ChickWeight Analysis-setup test](https://benjepson.github.io/chickweight)
+Won't be here for long, this was just me going through the motions of setting the portfolio. Maybe I'll add to it?
 
 - Blog: [My thoughts and more projects](https://benjepson.github.io/blog)

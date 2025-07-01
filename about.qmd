@@ -2,10 +2,30 @@
 title: "About"
 ---
 
-Hi I'm Ben - I love to analyze data and share the results with others in a way they can understand. I also like to teach, and learn from others too. I like to focus on analysis for people, keeping it interpretable and helping inform decisions.
+Hello!
 
-I have worked in the food industry doing product development/R&D and process improvements (along with many other things). While working I learned about statistical process control (SPC) and design of experiments(DOE) and loved it - these were methods I could use every day to work more efficiently and effectively. I wanted to learn everything I could so I went back to school while working full time and earned an MS in Applied Statistics.
+I focus on data analysis that helps solve problems and supports good decision making. I like to "figure things out".
 
-My goal for this portfolio is to show you who I am and my thought process. Being a career changer, I bring a unique perspective. I've been working with data in product development (experimental design, measurement systems analysis), consumer research (segmenting, text analysis), manufacturing (statistical process control, process modeling). I'm currently working as a self employed consultant, helping design research studies, analyze the results, and helping clients use data to make effective decisions. Before that my most recent job was Associate Director Statistician for a large food manufacturer where I was responsible for the application of statistical methods to food safety.
+I have a background in food science, product development, and manufacturing. (Every wonder how products get in a box and end up at the store? I was involved in a lot of the steps to get there.)
 
-I'm currently looking for a full time job, I'd love to help you analyze your data and help you make sound decisions. 
+
+While I was working, I found I had an interest in statistics as a way to help solve problems, and I'll even say a talent for it. I worked with many methods and many types of data, solving problems and helping figure things out:
+
+  - finding insights to solve customer complaints - EDA, visualization, text analysis
+  
+  - improve manufacturing consistency - experimental design, statistical process control
+  
+  - develop meaningful measurements and metrics - measurement systems analysis
+  
+  - designing experiments for maximal effectiveness and efficiency (solving problems quickly at a fraction of the cost!) - experimental design
+  
+  - planning and analyzing consumer research (taste testing) to learn what drives new product liking - text analysis, multivariate analysis, clustering
+  
+I had job titles like R&D Scientist and R&D Process Engineer, but a large portion of what I did each day was data science. It had an impact too, each project I worked on involved real products, real people, real consequences. 
+  
+I liked stats so much that I decided to go back to school while working full time and earned an MS in Applied Statistics in 2019. Totally worth it.
+
+I feel my experiences have given me a unique perspective - food is relatively hands on and you can develop an intuitive sense for working with data. It's very grounded in the "real world", and your senses, there are a lot of connections to draw. Working in manufacturing is fast paced and filled with changes ("large" data + velocity), combined with lab experiments and consumer research (slower, "small" data) - I've experienced quite a combination of situations, and I'm familiar with what might work (and maybe more important what *doesn't* work) in a given situation.
+
+I took a new job focused full time on data in 2022 (corporate statistician). My position was cut in 2023 in headcount reductions so for the last 2 years I've been self employed. I'm looking for new opportunities - either more consulting work or a full time job. Through this portfolio I hope you can get to know me and my data mindset.
+

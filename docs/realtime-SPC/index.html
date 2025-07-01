@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ben Jepson">
 
-<title>Ben Jepson - Chickweight dataset site testing</title>
+<title>Ben Jepson - Real Time SPC - Weight Loss</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,9 +125,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data exploration</a></li>
-  <li><a href="#conclusion-and-next-steps" id="toc-conclusion-and-next-steps" class="nav-link" data-scroll-target="#conclusion-and-next-steps">Conclusion and next steps</a></li>
+  <li><a href="#the-excitement-of-real-time-spc" id="toc-the-excitement-of-real-time-spc" class="nav-link active" data-scroll-target="#the-excitement-of-real-time-spc">The Excitement of Real Time SPC!</a></li>
+  <li><a href="#why-is-this-project-important" id="toc-why-is-this-project-important" class="nav-link" data-scroll-target="#why-is-this-project-important">Why is this project important?</a>
+  <ul class="collapse">
+  <li><a href="#starting-a-new-control-chart" id="toc-starting-a-new-control-chart" class="nav-link" data-scroll-target="#starting-a-new-control-chart">Starting a new control chart</a>
+  <ul class="collapse">
+  <li><a href="#first-point" id="toc-first-point" class="nav-link" data-scroll-target="#first-point">First point</a></li>
+  <li><a href="#day-2-62425" id="toc-day-2-62425" class="nav-link" data-scroll-target="#day-2-62425">Day 2, 6/24/25</a></li>
+  <li><a href="#day-3-62525" id="toc-day-3-62525" class="nav-link" data-scroll-target="#day-3-62525">Day 3, 6/25/25</a></li>
+  <li><a href="#day-4-62625" id="toc-day-4-62625" class="nav-link" data-scroll-target="#day-4-62625">Day 4, 6/26/25</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -170,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chickweight dataset site testing</h1>
+<h1 class="title">Real Time SPC - Weight Loss</h1>
 </div>
 
 
@@ -193,51 +167,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(ChickWeight)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Using an easy dataset to get used to updating quarto website on github pages Just added some options and changed the YAML</p>
+<section id="the-excitement-of-real-time-spc" class="level1">
+<h1>The Excitement of Real Time SPC!</h1>
+<p>I’m going to be adding to this project regularly. SPC (Statistical Process Control) is extremely useful and not just in manufacturing. Almost anytime data occurs over time it can be helpful to use control charts to tell if a process is changing, and when to react vs.&nbsp;leaving it alone.</p>
+<p>I’ll write more in another place about the details of SPC, this is an applied project.</p>
+<p>The subject? Me.</p>
+<p>Let’s say I want to get in the best shape ever, because why not? Part of this includes losing some weight. Well, we say “weight” but really I mean body fat.</p>
+<p>If you’ve ever tried weighing yourself, you might notice fluctuations. This kind of variation can make it confusing, am I actually progressing toward my goal or not?</p>
+<p>Control charts will help us know if we are in fact progressing, even with variation in the data.</p>
+<p>We will set up control limits to show whether the variation we’re observing is unusual, or routine.</p>
+<p>In this case of weight loss, we <em>want</em> to see the numbers going downward, to the goal weight. After this is achieved, we want to continue to monitor the weight to make sure our progress is maintained! Control charts will help us know if I’m maintaining, or if something is changing (further loss, or gain).</p>
 </section>
-<section id="data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration">Data exploration</h2>
+<section id="why-is-this-project-important" class="level1">
+<h1>Why is this project important?</h1>
+<p>When something exhibits variation over time, it can be difficult to know when to react and when to leave it alone. For example quarterly sales figures - if you’re reacting to short term movements you might overreact and reduce employee headcount when sales dip. Tracking data over time on a control chart can help you know if something has really changed or not and avoid overreacting.</p>
+<p>SPC textbooks and tutorials often walk through real examples and case studies which is great. But you’re generally given a lot of data (relatively) at once and the real excitement, the true beauty of SPC is working through it point by point. At every single point a decision must be made - act or don’t. This project will be in real time, with real results. Since I don’t know the future yet, I don’t know what it’s going to look like. By posting this project in public, I will be extra motivated to “do well”. If I’m not progressing toward my goal, I’ll be sure to act and make the necessary changes.</p>
+<section id="starting-a-new-control-chart" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-new-control-chart">Starting a new control chart</h2>
+<p>To start with control charts we need some data. You probably already have some, but for this project let’s say we really don’t have any data.</p>
+<p>I plan to track my weight weekly, because that’s a meaningful time frame to me, and easy to remember. Every Monday, or close to it. I feel monthly isn’t often enough, if I’m progressing I want to know about it (encouraging!), and if I’m not progressing I want to know relatively soon so I can change my behavior (more exercise, less calories) and drive the progress I need.</p>
+<p>It’s going to take many weeks before I can start a control chart, I can plot the dots but I want to jumpstart SPC. So I’m going to make some assumptions.</p>
+<p>Let’s assume that my weight is relatively stable right now, and that any variation I observe (up or down) is not indicative of a true change, it’s just fluctuations over time. I might be able to pinpoint why the variation is happening but it doesn’t matter for my question at hand - I just want to know if “the number is going down”.</p>
+<p>I’ll assume that this weight variation day to day is similar to what it would be week to week. Stable overall with some ups and downs.</p>
+<p>So to get started, I’ll weigh myself daily for a week to get an idea of what the variability is. Then I’ll use that to calculate the control chart, and start tracking weekly. After some weeks (probably at least 5 or 10) I can use the weekly variation to create a new chart.</p>
+<p>Did you catch that? If I have to wait so many weeks to get started with SPC, hopefully my weight has already changed significantly in that time! We are working with an imperfect, real world situation here. My control limits based on daily weights may not be exactly representative of weekly variation, but we start with what we have. It’s better to act quickly and get moving than to wait for perfect information. (And perfect info doesn’t exist anyways)</p>
+<p>I’ll take the measurement in the morning to be consistent.</p>
+<section id="first-point" class="level3">
+<h3 class="anchored" data-anchor-id="first-point">First point</h3>
+<p>Just a note to get started, I’m not going to share my actual weights here. One great thing about a control chart is that I can create it and share it, and you can view and interpret it without labeled numbers. Just the points themselves and the control limits.</p>
+<p>I started on 6/23, let’s look at this first point.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ChickWeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>     weight           Time           Chick     Diet   
- Min.   : 35.0   Min.   : 0.00   13     : 12   1:220  
- 1st Qu.: 63.0   1st Qu.: 4.00   9      : 12   2:120  
- Median :103.0   Median :10.00   20     : 12   3:120  
- Mean   :121.8   Mean   :10.72   10     : 12   4:118  
- 3rd Qu.:163.8   3rd Qu.:16.00   17     : 12          
- Max.   :373.0   Max.   :21.00   19     : 12          
-                                 (Other):506          </code></pre>
-</div>
-</div>
-<p>Ok I changed the text right here</p>
-<p>AND I removed the DT::datatable…I didn’t really think it belonged here</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ChickWeight, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight, <span class="at">color =</span> Diet)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Chick Growth Over Time by Diet"</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time (days)"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Weight (grams)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -246,13 +205,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Changed theme. I’d rather facet by chick maybe? Future edit this is a test.</p>
+<p>Isn’t that exciting!? Our first datapoint. I can already tell you it’s not what I want. It’s far enough from my goal that one data point is enough. Let’s look at where I want to be:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we see the journey, I know where I’m beginning, and where I want to be. We don’t know what it’s going to look like in between! Once I reach the goal I’ll move to maintenance tracking, it isn’t so useful to improve something then lose the progress later.</p>
 </section>
-<section id="conclusion-and-next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-next-steps">Conclusion and next steps</h2>
-<p>Round 2, see you (soon)</p>
+<section id="day-2-62425" class="level3">
+<h3 class="anchored" data-anchor-id="day-2-62425">Day 2, 6/24/25</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It’s hard to tell if anything is happening yet. I set the y limits to be constant, so the y axis isn’t changing with every new dot.</p>
+</section>
+<section id="day-3-62525" class="level3">
+<h3 class="anchored" data-anchor-id="day-3-62525">Day 3, 6/25/25</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ok we are seeing some day to day variation. This is the type of variation that can be misleading! If I was weighing myself weekly or monthly and seeing this kind of variation, I might alternate between being encouraged and discouraged.</p>
+<p>I know you can’t see the y axis scale, I’ll tell you from day 1 to day 2 the weight measurement decreased by 0.6 lbs, and from day 2 to day 3 it increased by 0.8 lbs. This variation doesn’t indicate an actual lasting change, it could be for many reasons but for the context of reaching my goal, it’s not telling me anything useful.</p>
+</section>
+<section id="day-4-62625" class="level3">
+<h3 class="anchored" data-anchor-id="day-4-62625">Day 4, 6/26/25</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>On day 4 the measurement went “down” again, so let’s see what day 5 holds next.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Wow! That’s pretty cool, down again, and what <em>looks like</em> a large decrease! Maybe a sustained decrease! It’s hard not to be encouraged by something like this. I’m gonna be crushed on day 6 if it goes back up again. I wasn’t going to do this yet, but let’s make a control chart to see if I have a reason to be be encouraged yet…</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>There we have it. Based on what I know so far, my limited knowledge of 5 datapoints, I don’t have a reason to think this process has changed yet. The blue line represents my estimate of the location of my weight, what it’s current value is. This is the average (mean). The red lines are control limits. If the process stays the same as it was when the limits were calculated, we expect almost every future point to be somewhere between these two (red) limits.</p>
+<p>Because the day 5 weigh-in is inside the limits, I can’t say my process (weight) has changed yet.</p>
+<p>But you say, you don’t have enough data to know anyways! That’s right, I don’t. We are just getting started. I’m curious to see what day 6 holds.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
