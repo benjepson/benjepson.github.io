@@ -5,7 +5,7 @@ format: html
 
 # Welcome to My Portfolio
 
-Hi I'm Ben! I'm a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and soon I'll be posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
+Hi I'm Ben - a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and soon I'll be posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
 
 Update 7/1/25 I have just started this portfolio recently, I will be adding more each day this week.
 

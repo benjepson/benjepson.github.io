@@ -128,7 +128,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-excitement-of-real-time-spc" id="toc-the-excitement-of-real-time-spc" class="nav-link active" data-scroll-target="#the-excitement-of-real-time-spc">The Excitement of Real Time SPC!</a></li>
   <li><a href="#why-is-this-project-important" id="toc-why-is-this-project-important" class="nav-link" data-scroll-target="#why-is-this-project-important">Why is this project important?</a>
   <ul class="collapse">
-  <li><a href="#starting-a-new-control-chart" id="toc-starting-a-new-control-chart" class="nav-link" data-scroll-target="#starting-a-new-control-chart">Starting a new control chart</a>
+  <li><a href="#starting-a-new-control-chart" id="toc-starting-a-new-control-chart" class="nav-link" data-scroll-target="#starting-a-new-control-chart">Starting a new control chart</a></li>
+  <li><a href="#run-chart-to-begin" id="toc-run-chart-to-begin" class="nav-link" data-scroll-target="#run-chart-to-begin">Run Chart to begin</a>
   <ul class="collapse">
   <li><a href="#first-point" id="toc-first-point" class="nav-link" data-scroll-target="#first-point">First point</a></li>
   <li><a href="#day-2-62425" id="toc-day-2-62425" class="nav-link" data-scroll-target="#day-2-62425">Day 2, 6/24/25</a></li>
@@ -138,8 +139,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#day-6-62825" id="toc-day-6-62825" class="nav-link" data-scroll-target="#day-6-62825">Day 6, 6/28/25</a></li>
   <li><a href="#day-7-62925" id="toc-day-7-62925" class="nav-link" data-scroll-target="#day-7-62925">Day 7, 6/29/25</a></li>
   <li><a href="#day-8-63025" id="toc-day-8-63025" class="nav-link" data-scroll-target="#day-8-63025">Day 8, 6/30/25</a></li>
-  <li><a href="#day-9-7125-coming-next" id="toc-day-9-7125-coming-next" class="nav-link" data-scroll-target="#day-9-7125-coming-next">Day 9, 7/1/25 coming next</a></li>
+  <li><a href="#day-9-7125" id="toc-day-9-7125" class="nav-link" data-scroll-target="#day-9-7125">Day 9, 7/1/25</a></li>
   </ul></li>
+  <li><a href="#first-control-limits-set" id="toc-first-control-limits-set" class="nav-link" data-scroll-target="#first-control-limits-set">First Control Limits Set</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,6 +200,10 @@ ul.task-list li input[type="checkbox"] {
 <p>So to get started, I’ll weigh myself daily for a week to get an idea of what the variability is. Then I’ll use that to calculate the control chart, and start tracking weekly. After some weeks (probably at least 5 or 10) I can use the weekly variation to create a new chart.</p>
 <p>Did you catch that? If I have to wait so many weeks to get started with SPC, hopefully my weight has already changed significantly in that time! We are working with an imperfect, real world situation here. My control limits based on daily weights may not be exactly representative of weekly variation, but we start with what we have. It’s better to act quickly and get moving than to wait for perfect information. (And perfect info doesn’t exist anyways)</p>
 <p>I’ll take the measurement in the morning to be consistent.</p>
+</section>
+<section id="run-chart-to-begin" class="level2">
+<h2 class="anchored" data-anchor-id="run-chart-to-begin">Run Chart to begin</h2>
+<p>To start out, I’m just going to plot each point in order as it happens. This is sometimes called a run chart.</p>
 <section id="first-point" class="level3">
 <h3 class="anchored" data-anchor-id="first-point">First point</h3>
 <p>Just a note to get started, I’m not going to share my actual weights here. One great thing about a control chart is that I can create it and share it, and you can view and interpret it without labeled numbers. Just the points themselves and the control limits.</p>
@@ -333,11 +339,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Day 8, back “down” a little again. I know enough to say it’s relatively stable, at least I’m not gaining, but let’s emphasize progress. Watch closely as I attempt to drive progress moving forward.</p>
 </section>
-<section id="day-9-7125-coming-next" class="level3">
-<h3 class="anchored" data-anchor-id="day-9-7125-coming-next">Day 9, 7/1/25 coming next</h3>
-
-
+<section id="day-9-7125" class="level3">
+<h3 class="anchored" data-anchor-id="day-9-7125">Day 9, 7/1/25</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Day 9, I agree with my assessment yesterday that this process is unchanged (so far). My weight seems to be stable around the average. I know enough, I might as well start using a control chart.</p>
 </section>
+</section>
+<section id="first-control-limits-set" class="level2">
+<h2 class="anchored" data-anchor-id="first-control-limits-set">First Control Limits Set</h2>
+<p>I’m using the values from days 1 - 9 to set my baseline or reference control limits. These will be used for the control chart moving forward. The limits represent the current state - based on what I know so far, given the data (and variation observed), I expect future values to be centered around the average, and within the limits - until something happens or changes.</p>
+<p>If I observe a point outside the limits, I will have a <em>potential signal</em> that something might be different. If the point is above the upper limit it’s undesirable, it means I most likely gained weight. A point below the lower limit is desirable - this shows that I probably have actually reduced my weight.</p>
+<p>Control charts are so valuable, because they’re going to help me not worry if it looks like I’ve gained, and they will help me know when I’m progressing in the right direction. Without the limits to put the data in context, the variation in the data makes it hard to know what’s really happening point to point.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To put this in context, our best estimate of my current weight is the blue line. The lower limit (red) is <strong>over 2 pounds</strong> less than the average.</p>
+<p>I might say: “Given how much variation there is in the data from day to day, it will be difficult to detect a change unless it is more than 2 pounds different from where we are starting”.</p>
+<p>I can’t reliably detect anything less than a 2 - 2.5 lb change! That’s good to know - I won’t get discouraged. It might take 1, 2, or even 3 weeks to lose that much.</p>
+
+
 </section>
 </section>
 
