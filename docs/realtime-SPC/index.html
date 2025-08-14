@@ -132,6 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#run-chart-to-begin" id="toc-run-chart-to-begin" class="nav-link" data-scroll-target="#run-chart-to-begin">Run Chart to begin</a></li>
   <li><a href="#first-point" id="toc-first-point" class="nav-link" data-scroll-target="#first-point">First point</a></li>
   <li><a href="#first-control-limits-set-day-9" id="toc-first-control-limits-set-day-9" class="nav-link" data-scroll-target="#first-control-limits-set-day-9">First Control Limits Set (Day 9)</a></li>
+  <li><a href="#day-53---a-decision" id="toc-day-53---a-decision" class="nav-link" data-scroll-target="#day-53---a-decision">Day 53 - A decision!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -166,39 +167,31 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="the-excitement-of-real-time-spc" class="level1">
 <h1>The Excitement of Real Time SPC!</h1>
-<p>I’m going to be adding to this project regularly. SPC (Statistical Process Control) is extremely useful and not just in manufacturing. Almost anytime data occurs over time it can be helpful to use control charts to tell if a process is changing, and when to react vs.&nbsp;leaving it alone.</p>
-<p>(NOTE - I started this as a sequential journal, if you check back in a week or two I believe I’ll have this section rewritten, probably condensed, and add some periodic summaries that make it easy to catch up)</p>
-<p>I’ll write more in another place about the details of SPC, this is an applied project.</p>
-<p>The subject? Me.</p>
-<p>Let’s say I want to get in the best shape ever, because why not? Part of this includes losing some weight. Well, we say “weight” but really I mean body fat.</p>
-<p>If you’ve ever tried weighing yourself, you might notice fluctuations. This kind of variation can make it confusing, am I actually progressing toward my goal or not?</p>
-<p>Control charts will help us know if we are in fact progressing, even with variation in the data.</p>
-<p>We will set up control limits to show whether the variation we’re observing is unusual, or routine.</p>
-<p>In this case of weight loss, we <em>want</em> to see the numbers going downward, to the goal weight. After this is achieved, we want to continue to monitor the weight to make sure our progress is maintained! Control charts will help us know if I’m maintaining, or if something is changing (further loss, or gain).</p>
+<p>When you learn about SPC (statistical process control) often you see a dataset all at once. In practice though, you have to start somewhere, and continually make decisions. With each new data point, do I act (investigate, change), or leave the process alone (for now).</p>
+<p>My goal with this project is to show a “real” SPC project from start to ongoing - once I achieve the objective I’ll switch to monitoring to maintain progress.</p>
 </section>
 <section id="why-is-this-project-important" class="level1">
 <h1>Why is this project important?</h1>
-<p>When something exhibits variation over time, it can be difficult to know when to react and when to leave it alone. For example quarterly sales figures - if you’re reacting to short term movements you might overreact and reduce employee headcount when sales dip. Tracking data over time on a control chart can help you know if something has really changed or not and avoid overreacting.</p>
-<p>SPC textbooks and tutorials often walk through real examples and case studies which is great. But you’re generally given a lot of data (relatively) at once and the real excitement, the true beauty of SPC is working through it point by point. At every single point a decision must be made - act or don’t. This project will be in real time, with real results. Since I don’t know the future yet, I don’t know what it’s going to look like. By posting this project in public, I will be extra motivated to “do well”. If I’m not progressing toward my goal, I’ll be sure to act and make the necessary changes.</p>
+<ul>
+<li><p>It’s real, and important to me personally (I want to reach my goal of X lbs weight loss)</p></li>
+<li><p>It’s applicable to realistic situations - at work things happen one point at a time.</p></li>
+<li><p>Real processes exhibit variation - SPC will show us how to put it in context (act when appropriate but don’t overreact)</p></li>
+<li><p>I’m demonstrating SPC without showing you the Y axis - we can use control charts by observing the pattern. This somewhat protects confidential information</p></li>
+</ul>
 <section id="starting-a-new-control-chart" class="level2">
 <h2 class="anchored" data-anchor-id="starting-a-new-control-chart">Starting a new control chart</h2>
-<p>To start with control charts we need some data. You probably already have some, but for this project let’s say we really don’t have any data.</p>
-<p>I plan to track my weight weekly, because that’s a meaningful time frame to me, and easy to remember. Every Monday, or close to it. I feel monthly isn’t often enough, if I’m progressing I want to know about it (encouraging!), and if I’m not progressing I want to know relatively soon so I can change my behavior (more exercise, less calories) and drive the progress I need.</p>
-<p>It’s going to take many weeks before I can start a control chart, I can plot the dots but I want to jumpstart SPC. So I’m going to make some assumptions.</p>
-<p>Let’s assume that my weight is relatively stable right now, and that any variation I observe (up or down) is not indicative of a true change, it’s just fluctuations over time. I might be able to pinpoint why the variation is happening but it doesn’t matter for my question at hand - I just want to know if “the number is going down”.</p>
-<p>I’ll assume that this weight variation day to day is similar to what it would be week to week. Stable overall with some ups and downs.</p>
-<p>So to get started, I’ll weigh myself daily for a week to get an idea of what the variability is. Then I’ll use that to calculate the control chart, and start tracking weekly. After some weeks (probably at least 5 or 10) I can use the weekly variation to create a new chart.</p>
-<p>Did you catch that? If I have to wait so many weeks to get started with SPC, hopefully my weight has already changed significantly in that time! We are working with an imperfect, real world situation here. My control limits based on daily weights may not be exactly representative of weekly variation, but we start with what we have. It’s better to act quickly and get moving than to wait for perfect information. (And perfect info doesn’t exist anyways)</p>
-<p>I’ll take the measurement in the morning to be consistent.</p>
+<p>To start with control charts we need some data. At work you might already have some, but for this project let’s say we don’t have any data.</p>
+<p>I plan to track my weight weekly, because that’s a meaningful time frame to me, and easy to remember. I feel monthly isn’t often enough, if I’m progressing I want to know about it (encouraging!), and if I’m not progressing I want to know so I can change my behavior (process inputs) and drive the progress I need.</p>
+<p>To get started I’m going to take measurements daily to get an idea of how much weight fluctuates, and start from there. Once I’ve tracked daily for awhile we will probably switch to weekly.</p>
 </section>
 <section id="run-chart-to-begin" class="level2">
 <h2 class="anchored" data-anchor-id="run-chart-to-begin">Run Chart to begin</h2>
-<p>To start out, I’m just going to plot each point in order as it happens. This is sometimes called a run chart.</p>
+<p>To start out, I’m just going to plot each point in order as it happens (run chart).</p>
 </section>
 <section id="first-point" class="level2">
 <h2 class="anchored" data-anchor-id="first-point">First point</h2>
-<p>Just a note to get started, I’m not going to share my actual weights here. One great thing about a control chart is that I can create it and share it, and you can view and interpret it without labeled numbers. Just the points themselves and the control limits.</p>
-<p>I started on 6/23, let’s look at this first point.</p>
+<p>I’m not going to share my actual weights here. One great thing about a control chart is that I can create and share it, and you can view and interpret it without labeled numbers. Just the points themselves and the control limits.</p>
+<p>Let’s look at this first point.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -208,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Isn’t that exciting!? Our first datapoint. I can already tell you it’s not what I want. It’s far enough from my goal that one data point is enough. Let’s look at where I want to be:</p>
+<p>Our first datapoint. I can already tell you it’s not what I want. It’s far enough from my goal that one data point is enough. Let’s look at where I want to be:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -220,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Here we see the journey from where I am to where I want to be. We don’t know what it’s going to look like in between! Once I reach the goal I’ll move to maintenance tracking, it isn’t so useful to improve something then lose the progress later.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Day 2, 6/24/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Day 3, 6/25/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Day 4, 6/26/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Day 5, 6/27/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Day 6, 6/28/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">Day 7, 6/29/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false">Day 8, 6/30/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false">Day 9, 7/1/25</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Day 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Day 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Day 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Day 5</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Day 6</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">Day 7</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false">Day 8</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false">Day 9</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -346,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I might say: “Given how much variation there is in the data from day to day, it will be difficult to detect a change unless it is more than 2 pounds different from where we are starting”.</p>
 <p>I can’t reliably detect anything less than a 2 - 2.5 lb change! That’s good to know - I won’t get discouraged. It might take 1, 2, or even 3 weeks to lose that much.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Day 10, 7/2/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Day 11, 7/3/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Day 12, 7/4/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Day 13, Day 14</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Day 15, 7/7/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Day 16, 7/8/25</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-7" role="tab" aria-controls="tabset-2-7" aria-selected="false">Day 17, 7/9/25</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Day 10</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Day 11</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Day 12</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Day 13</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Day 15</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Day 16</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-7" role="tab" aria-controls="tabset-2-7" aria-selected="false">Day 17</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
@@ -356,11 +349,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;ScaleContinuousPosition&gt;
- Range:  
- Limits:  243 --  249</code></pre>
 </div>
 </div>
 <p>Day 10 assessment: No detectable change</p>
@@ -374,11 +362,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;ScaleContinuousPosition&gt;
- Range:  
- Limits:  243 --  249</code></pre>
 </div>
 </div>
 <p>Day 11 assessment: No detectable change</p>
@@ -451,6 +434,26 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="day-53---a-decision" class="level2">
+<h2 class="anchored" data-anchor-id="day-53---a-decision">Day 53 - A decision!</h2>
+<p>I can’t believe it’s been this long. I tracked some days but didn’t update the project. And my tracking trailed off you’ll see.</p>
+<p>I didn’t intend for the project to get this real, but since it happened let’s embrace it. Here is what I have:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I can’t say what’s happened on the days with no data. But in a way it doesn’t matter for my objective, which is to drive the process downward (then keep it there).</p>
+<p>Based on what I have there is no indication that the process has changed - there is a lot of variation, and maybe weight did change temporarily but it looks like it’s about the same as day 1.</p>
+<p>The period from day 17 to 28 might have been a small decrease? Day 17 was just outside LCL which is the first signal, followed by most points until day 28 being below average.</p>
+<p>Next steps - I am going to switch to weekly tracking, daily is too much to keep up with.</p>
+<p>I will calculate weekly control limits and show how different they are than daily.</p>
+<p>I will also try harder to make change happen.</p>
 
 
 </section>
