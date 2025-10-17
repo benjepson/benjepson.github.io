@@ -13,7 +13,7 @@ While I was working, I found I had an interest in statistics as a way to help so
 
   - finding insights to solve customer complaints - EDA, visualization, text analysis
   
-  - improve manufacturing consistency - experimental design, statistical process control
+  - improve manufacturing consistency - experimental design, statistical process control, industrial analytics
   
   - develop meaningful measurements and metrics - measurement systems analysis
   
@@ -21,11 +21,12 @@ While I was working, I found I had an interest in statistics as a way to help so
   
   - planning and analyzing consumer research (taste testing) to learn what drives new product liking - text analysis, multivariate analysis, clustering
   
-I had job titles like R&D Scientist and R&D Process Engineer, but a large portion of what I did each day was data science. It had an impact too, each project I worked on involved real products, real people, real consequences. 
+I had job titles like R&D Scientist, R&D Process Engineer, and Associate Director Statistician, but a large portion of what I did each day was data science. It had an impact too, each project I worked on involved real products, real people, real consequences. 
   
-I liked stats so much that I decided to go back to school while working full time and earned an MS in Applied Statistics in 2019. Totally worth it.
+I liked stats so much that I decided to go back to school while working full time and earned an MS in Applied Statistics in 2019. Worth it!
 
 I feel my experiences have given me a unique perspective - food is relatively hands on and you can develop an intuitive sense for working with data. It's very grounded in the "real world", and your senses, there are a lot of connections to draw. Working in manufacturing is fast paced and filled with changes ("large" data + velocity), combined with lab experiments and consumer research (slower, "small" data) - I've experienced quite a combination of situations, and I'm familiar with what might work (and maybe more important what *doesn't* work) in a given situation.
 
 I took a new job focused full time on data in 2022 (corporate statistician). My position was cut in 2023 in headcount reductions so for the last 2 years I've been self employed. I'm looking for new opportunities - either more consulting work or a full time job. Through this portfolio I hope you can get to know me and my data mindset.
+
 

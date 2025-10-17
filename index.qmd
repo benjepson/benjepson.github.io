@@ -5,13 +5,10 @@ format: html
 
 # Welcome to My Portfolio
 
-Hi I'm Ben - a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts, and soon I'll be posting on YouTube as well. Let me know if you'd like to collaborate or hear more about a topic!
+Hi I'm Ben - a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts. Check back soon for more updates.
 
-Update 8/13/25 New projects added, plus some twists in real time SPC (maybe a little too real)
-
-- Featured Project: [Real Time SPC](https://benjepson.github.io/realtime-SPC)
-This one is really exciting. I'm using the power of Statistical Process Control (SPC) to track my fitness progress. Unlike a textbook example where you are given a dataset, this dataset is being generated in real time, day by day, week by week, and I don't know how it's going to go. We will find out together. Keep checking back for updates!
+- [Manufacturing Control Charts](https://benjepson.github.io/Manufacturing-SPC-comparison) This is a foundational demonstration of using a control chart, inspired by real manufacturing scenarios. I demonstrate how control charts are a powerful way to look at data.
 
 - [Wine quality](https://benjepson.github.io/wine-quality) Here I use the well known wine quality dataset to show some fundamental exploratory data analysis, visualization, and predictive modeling. I focus on my thought process throughout. This project uses linear regression and random forest models to predict wine quality, and I conclude with some thoughts and next steps.
 
-- Blog: [My thoughts and more projects](https://benjepson.github.io/blog) I will be adding smaller projects here, capturing my thoughts. 
+- Blog: [My thoughts and more projects](https://benjepson.github.io/blog) I will be adding smaller projects here, capturing my thought process. 

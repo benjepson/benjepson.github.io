@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ben Jepson">
 
-<title>Ben Jepson - Illinois Traffic Fatalities Over Time</title>
+<title>Ben Jepson - SPC in Manufacturing - Control Chart Case Study</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,14 +151,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#statistical-process-control" id="toc-statistical-process-control" class="nav-link active" data-scroll-target="#statistical-process-control">Statistical Process Control</a>
+  <ul class="collapse">
+  <li><a href="#simulated-data" id="toc-simulated-data" class="nav-link" data-scroll-target="#simulated-data">Simulated Data</a>
+  <ul class="collapse">
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#control-chart" id="toc-control-chart" class="nav-link" data-scroll-target="#control-chart">Control Chart</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Illinois Traffic Fatalities Over Time</h1>
+<h1 class="title">SPC in Manufacturing - Control Chart Case Study</h1>
 </div>
 
 
@@ -181,73 +195,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Dataset from</p>
-<p>https://idot.illinois.gov/content/dam/soi/en/web/idot/documents/transportation-system/resources/safety/crash-reports/annual-fatalities-1920-2021.pdf</p>
-<p>Take this pdf, and find population by year, and look at trends, maybe in light of seat belt legislation, speed limits, other? Might be a blog post not full project</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use to read in the dataset</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'pdftools' was built under R version 4.4.3</code></pre>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fig.width =</span> <span class="dv">10</span>, <span class="at">fig.height =</span> <span class="dv">7</span>, <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using poppler version 23.08.0</code></pre>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggQC)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     </code></pre>
+<section id="statistical-process-control" class="level1">
+<h1>Statistical Process Control</h1>
+<p>I am a big proponent of using SPC to solve real world problems. I’ve worked in industry as a food scientist and process engineer, and I have managed SPC for many facilities.</p>
+<p>Control charts are valuable for putting variation in context - real processes move up and down and we need to know when to react and intervene in the process, and when to leave it alone. We want to be able to detect change and problems, but avoid intervening when it’s not necessary (called “tampering”). If a process is stable and we intervene (tamper) by changing a setting, we are actually increasing variation. It is best to leave a process alone unless we have evidence that something has changed.</p>
+<section id="simulated-data" class="level2">
+<h2 class="anchored" data-anchor-id="simulated-data">Simulated Data</h2>
+<p>This case study will use simulated data. We will look at two machines making the same part, with different operators, and a finished product measurement (diameter in millimeters).</p>
+<p>I am writing this project in R and publishing with Quarto, if you want to see my code just click on “Show code”.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for simulation</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n_operators <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>n_obs <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate dataset with measurement time, two machines, #n operators, and #n parts (products)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">timestamp =</span> <span class="fu">seq.POSIXt</span>(<span class="at">from =</span> <span class="fu">as.POSIXct</span>(<span class="st">"2025-10-01 08:00"</span>), <span class="at">by =</span> <span class="st">"min"</span>, <span class="at">length.out =</span> n_obs),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">machine =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Machine_A"</span>, <span class="st">"Machine_B"</span>), n_obs, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate measurements with machine-specific means</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>diameter_mm <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_obs, <span class="at">mean =</span> <span class="fu">ifelse</span>(df<span class="sc">$</span>machine <span class="sc">==</span> <span class="st">"Machine_A"</span>, <span class="fl">10.00</span>, <span class="fl">10.02</span>), <span class="at">sd =</span> <span class="fl">0.03</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Inject a few unusual looking points</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>diameter_mm[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n_obs, <span class="dv">5</span>)] <span class="ot">&lt;-</span> df<span class="sc">$</span>diameter_mm[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n_obs, <span class="dv">5</span>)] <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">0.15</span>, <span class="at">sd =</span> <span class="fl">0.05</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># round the measurements after running simulation, assume production records 3 decimals</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>diameter_mm <span class="ot">&lt;-</span> <span class="fu">round</span>(df<span class="sc">$</span>diameter_mm, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mypdf <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_text</span>(<span class="st">"annual-fatalities-1920-2021.pdf"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#split into lines</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>lines <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(mypdf[<span class="dv">1</span>], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the top title, and info lines at the bottom</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>lines_clean <span class="ot">&lt;-</span> lines[<span class="dv">3</span><span class="sc">:</span><span class="fu">which</span>(<span class="fu">str_detect</span>(lines, <span class="st">"Source"</span>)) <span class="sc">-</span> <span class="dv">1</span>]</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># split each line apart</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> <span class="fu">str_split</span>(lines_clean, <span class="st">"</span><span class="sc">\\</span><span class="st">s{2,}"</span>) <span class="co"># split every 2 spaces seems to be the structure</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># turn tokens list into dataframe</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>flat <span class="ot">&lt;-</span> <span class="fu">unlist</span>(tokens)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>flat <span class="ot">&lt;-</span> flat[flat <span class="sc">!=</span> <span class="st">""</span>] <span class="co"># remove empty space</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># get the year and numbers paired in dataframe</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">raw =</span> flat) <span class="sc">%&gt;%</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>(<span class="fu">n</span>()<span class="sc">/</span><span class="dv">2</span>), <span class="at">each =</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">as.integer</span>(<span class="fu">first</span>(raw)),</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">fatalities =</span> <span class="fu">parse_number</span>(<span class="fu">last</span>(raw))</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There were 10 warnings in `summarise()`.
-The first warning was:
-ℹ In argument: `year = as.integer(first(raw))`.
-ℹ In group 1: `group = 1`.
-Caused by warning:
-! NAs introduced by coercion
-ℹ Run `dplyr::last_dplyr_warnings()` to see the 9 remaining warnings.</code></pre>
+<p>In manufacturing we would have these charts set up for real time viewing, ideally operators would plot the data immediately with each new measurement. Since this is a demonstration we are starting out with a dataset and looking at it. In the near future I plan to do some real time SPC demos to show how you might react in production.</p>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+</section>
+<section id="control-chart" class="level3">
+<h3 class="anchored" data-anchor-id="control-chart">Control Chart</h3>
+<p>Since I know we have multiple machines, we will compare them side by side.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> timestamp, <span class="at">y =</span> diameter_mm))<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_QC</span>(<span class="at">method =</span> <span class="st">"XmR"</span>, <span class="at">auto.label =</span> <span class="cn">TRUE</span>, <span class="at">label.digits =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>machine)<span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Control Chart comparing two machines"</span>, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"diameter mm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="3000"></p>
+</figure>
 </div>
 </div>
+</div>
+<p>If this were a production setting, control limits (UCL and LCL) would be calculated from a stable baseline period—representative of regular operations. For this analysis, limits are based on all observed data to assess process predictability. Once we understand the behavior, we can decide whether the process is ready for ongoing monitoring and use these limits moving forward.</p>
+<section id="control-chart-discussion" class="level4">
+<h4 class="anchored" data-anchor-id="control-chart-discussion">Control Chart Discussion</h4>
+<p>Control charts reveal a lot at once. We see that <strong>Machine B has a higher average diameter than Machine A</strong>. Whether this difference is meaningful depends on engineering specifications and subject matter expertise. It’s a conversation to have, not a conclusion.</p>
+<p>The <strong>width of the control limits</strong> (UCL minus LCL) is similar for both machines, just shifted with the mean. This suggests <strong>comparable variation</strong>, even if the averages differ.</p>
+<p>Is this amount of variation acceptable? That’s a question for the engineers. It might meet customer requirements, or it might be causing problems. Either way, there’s <strong>potential for improvement</strong> by reducing variation within each machine. Whether that’s feasible or economical is part of the discussion.</p>
+<p>We also see points outside the control limits on both machines. These are <em>signals</em> (indications that something happened or changed). In production, they should be investigated in real time to identify root causes and prevent the same problem from happening again.</p>
+<p>Besides these clear <em>signals</em>, there are <strong>frequent dips and spikes</strong>. It’s not clear whether these are meaningful, but the variation looks excessive to me. The process runs tighter at times, suggesting it might actually be multiple “processes” mixed together (with different conditions). If we can identify the conditions that lead to better performance - periods of reduced variation and closer-to-target results - we can improve consistency.</p>
+<p>For example, I notice some small clusters of points above and below the average. These patterns may or may not be significant, but if we can trace them to a root cause, we may unlock a knowledge leading to better control.</p>
+</section>
+</section>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next Steps</h3>
+<p>This is just the beginning, but it shows how control charts support diagnostic thinking and generate insights. In a single graph, we have:</p>
+<ul>
+<li><p>Compared the average and variation of both machines</p></li>
+<li><p>Generated insights that lead to discussion of other variables: operator, raw materials, environmental factors</p></li>
+<li><p>Laid the foundation for ongoing monitoring and continuous improvement</p></li>
+</ul>
+<p>In real production, there might be hundreds of control charts. The key is making data accessible so the right people can act at the right time. When data is visible and in context, it helps prevent process tampering, supports timely intervention, and reveals opportunities for improvement.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
