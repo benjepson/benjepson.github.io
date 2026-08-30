@@ -1,14 +1,28 @@
 ---
-title: ""
+title: "Ben Jepson"
 format: html
+
 ---
 
-# Welcome to My Portfolio
+# Welcome
 
-Hi I'm Ben - a data scientist with a background in industrial statistics and food science. I have a few projects featured here, my blog contains more projects and thoughts. Check back soon for more updates.
+I build reproducible statistical tools and analysis for regulated manufacturing, with a focus on SPC, DOE, capability analysis, and practical visual methods. My work centers on clarity, correctness, and helping real people solve real problems with data.
 
-- [Manufacturing Control Charts](https://benjepson.github.io/Manufacturing-SPC-comparison) This is a foundational demonstration of using a control chart, inspired by real manufacturing scenarios. I demonstrate how control charts are a powerful way to look at data.
+## Featured Project: SPCtools
 
-- [Wine quality](https://benjepson.github.io/wine-quality) Here I use the well known wine quality dataset to show some fundamental exploratory data analysis, visualization, and predictive modeling. I focus on my thought process throughout. This project uses linear regression and random forest models to predict wine quality, and I conclude with some thoughts and next steps.
+A modern SPC package in R designed for human‑readable logic, metadata, and opinionated defaults that reflect real operational needs.
 
-- Blog: [My thoughts and more projects](https://benjepson.github.io/blog) I will be adding smaller projects here, capturing my thought process. 
+- GitHub repo: https://github.com/benjepson/SPCtools
+- Documentation (pkgdown): *coming soon*
+
+## About Me
+
+I’m an industrial statistician/data scientist with experience in regulated manufacturing, analytical method support, process validation, and continuous improvement. I earned an MS in Applied Statistics from KUMC and have used R for over a decade.
+
+## LinkedIn
+
+https://www.linkedin.com/in/benjepson/
+
+## Personal
+
+Outside of work, I enjoy trees, gardening, and playing guitar.
