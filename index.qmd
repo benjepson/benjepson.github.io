@@ -12,7 +12,7 @@ I build reproducible statistical tools and analysis for regulated manufacturing,
 
 A modern SPC package in R designed for human‑readable logic, metadata, and opinionated defaults that reflect real operational needs.
 
-- GitHub repo: https://github.com/benjepson/SPCtools
+- GitHub repo: [SPCtools](https://github.com/benjepson/SPCtools)
 - Documentation (pkgdown): *coming soon*
 
 ## About Me
