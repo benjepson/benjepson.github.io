@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Ben Jepson",
     "section": "",
-    "text": "I build reproducible statistical tools and analysis for regulated manufacturing, with a focus on SPC, DOE, capability analysis, and practical visual methods. My work centers on clarity, correctness, and helping real people solve real problems with data.\n\n\nA modern SPC package in R designed for human‑readable logic, metadata, and opinionated defaults that reflect real operational needs.\n\nGitHub repo: SPCtools\nDocumentation (pkgdown): coming soon\n\n\n\n\nI’m an industrial statistician/data scientist with experience in regulated manufacturing, analytical method support, process validation, and continuous improvement. I earned an MS in Applied Statistics from KUMC and have used R for over a decade.\n\n\n\nhttps://www.linkedin.com/in/benjepson/\n\n\n\nOutside of work, I enjoy trees, gardening, and playing guitar."
+    "text": "I build reproducible statistical tools and analysis for regulated manufacturing, with a focus on SPC, DOE, capability analysis, and practical visual methods. My work centers on clarity, correctness, and helping real people solve real problems with data.\n\n\nA modern SPC package in R designed for human‑readable logic, metadata, and opinionated defaults that reflect real operational needs.\n\nGitHub repo: SPCtools\nDocumentation (pkgdown): coming soon\n\n\n\n\nI’m an industrial statistician/data scientist with experience in regulated manufacturing, analytical method support, process validation, and continuous improvement. I earned an MS in Applied Statistics from KUMC and have used R for over a decade.\n\n\n\n(https://www.linkedin.com/in/benjepson/)\n\n\n\nOutside of work, I enjoy trees, gardening, and playing guitar."
   },
   {
     "objectID": "index.html#featured-project-spctools",
@@ -25,7 +25,7 @@
     "href": "index.html#linkedin",
     "title": "Ben Jepson",
     "section": "",
-    "text": "https://www.linkedin.com/in/benjepson/"
+    "text": "(https://www.linkedin.com/in/benjepson/)"
   },
   {
     "objectID": "index.html#personal",
